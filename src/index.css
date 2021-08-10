@@ -1,13 +1,406 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font: 1.6rem Helvetica;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #root{
+    height: 100%;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  .grid-container{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 17rem 1fr 5rem;
+    height: 100%;
+  }
+  
+  .header{
+    grid-area: header;
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+  }
+
+  .header-name{
+    margin-left: 255px;
+  }
+
+  .header-img{
+      max-width: 120px;
+      max-height: 120px;
+      margin-right: 10px;
+  }
+  
+  .header-name a{
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: Apple Chancery, cursive;
+    text-decoration: none;
+    position: relative;
+    bottom: 30px;
+  }
+
+  .header-links{
+    margin-left: 450px;
+  }
+  
+  .header-links a{
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10rem;
+    font-family: Apple Chancery, cursive;
+  }
+  
+  .main{
+    grid-area: main;
+  }
+
+  .main-img{
+    position: relative;
+  }
+
+  .quote{
+    position: absolute;
+    z-index: 1000;
+    background-color: whitesmoke;
+    margin-top: 90px;
+    margin-left: 140px;
+    width: 15%;
+    height: 38%;
+    box-shadow: 10px 10px rgb(214, 210, 210);
+    font-size: 18px;
+    font-family: Apple Chancery, cursive;
+  }
+
+  .quote h3{
+    padding-left: 8px;
+  }
+
+  .invert{
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+
+  .main-img img{
+    width: 100%;
+    max-height: 500px;
+  }
+  
+  .footer{
+    grid-area: footer;
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+    font-family: Apple Chancery, cursive;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color: #ff8000;
+  }
+
+  /* About */
+
+  .about-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    background-image: url(/images/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .about{
+    border: .1rem #808080 solid;
+    height: 70%;
+    width: 45%;
+    justify-content: center;
+    background-color: floralwhite;
+    margin-left: 240px;
+  }
+
+  .about-head{
+    font-size: 25px;
+    font-family: Apple Chancery, cursive;
+    font-weight: 300;
+    margin-left: 240px;
+    padding-top: 0;
+  }
+
+  .about-details{
+    font-size: 20px;
+    padding-left: 70px;
+    width: 80%;
+    font-family: Apple Chancery, cursive;
+  }
+
+  .reviews{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: .1rem #808080 solid;
+    height: 70%;
+    width: 25%;
+    margin-right: 150px; 
+    background-color: floralwhite;
+  }
+
+  .review-head{
+    font-size: 25px;
+    font-family: Apple Chancery, cursive;
+    font-weight: 300;
+    padding-top: 0;
+  }
+
+  .review-details{
+    font-size: 17px;
+    width: 80%;
+    font-family: Apple Chancery, cursive;
+    background-color: rgb(241, 226, 226);
+    width: 80%;
+    height: 45%;
+    padding-left: 20px;
+  }
+
+  .review-details h6{
+    font-size: 15px;
+    padding-left: 230px;
+    margin-bottom: 3px;
+  }
+
+  .addreview-details{
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    width: 65%;
+    font-family: Apple Chancery, cursive;
+    background-color: rgb(241, 226, 226);
+    height: 45%;
+    padding: 20px;
+    padding-top: 15px;
+  }
+
+  .addreview-details textarea{
+    font-family: Apple Chancery, cursive;
+  }
+
+  .addreview-details input{
+    font-family: Apple Chancery, cursive;
+    margin-top: 7px;
+    height: 10px;
+  }
+
+  .submitreview{
+    margin-top: 5px;
+    height: 28px;
+    width: 40%;
+    font-size: 15px;
+    padding-bottom: 24px;
+  }
+
+  .backreview{
+    margin-top: 5px;
+    height: 28px;
+    width: 40%;
+    font-size: 15px;
+    padding-bottom: 24px;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 8px;
+  }
+
+  .addreview-btn{
+    margin-top: 5px;
+  }
+
+  /* Contact */
+
+  .contact-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    height: 100%;
+    background-image: url(/images/b.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 98%;
+
+  }
+
+  .contact-container div{
+    margin-top: 235px;
+    width: 20%;
+    height: 50%;
+    margin-right: 12px;
+    text-align: center;
+    background-color: whitesmoke;
+  }
+
+  .contact-container div ul {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    left: -20px;
+  }
+
+  .contact-details{
+    padding-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    font-family: Apple Chancery, cursive;
+    padding-bottom: 50px;
+  }
+
+  .contact-place{
+    font-family: Apple Chancery, cursive;
+    font-size: 18px;
+    color: rgb(60, 64, 68);
+  }
+
+  /* Services */
+
+  .service-container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-image: url(/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  .table{
+    width: 60%;
+    margin-top: 90px;
+    background-color: whitesmoke;
+    font-family: Apple Chancery, cursive;
+    font-size: 22px;
+    border-spacing: 2px 6px;
+  }
+  
+  td{
+    text-align:  left;
+    border-top: .1rem rgb(212, 206, 206) solid;
+  }
+
+  /* Forms */
+
+  .appointment-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url(/images/b.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url(/images/b.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    padding: 2rem;
+    border: .1rem #c0c0f0 solid;
+    border-radius: .5rem;
+    list-style-type: none;
+    background-color: white;
+  }
+  
+  .form-container li{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: Apple Chancery, cursive;
+    font-size: 18px;
+  }
+  
+  input, select, button, textarea{
+    font-size: 16px;
+    padding: 1rem;
+    border: .1rem #c0c0c0 solid;
+    border-radius: .5rem;
+  }
+
+  button{
+    background-color: rgb(22, 21, 21);
+    color: whitesmoke;
+    font-size: 20px;
+  }
+
+  .mainorder{
+    margin: 100px 400px;
+    background-color: whitesmoke;
+    width: 28%;
+    height: 50%;
+    padding: 20px;
+    font-family: Apple Chancery, cursive;
+    box-shadow: 10px 10px rgb(180, 176, 176);
+  }
+
+  .order-success{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .order-success ul{
+    list-style-type: none;
+    margin-top: 20px;
+    position: relative;
+    left: -25px;
+  }
+
+  .order-success li:last-child{
+    margin-left: 43px;
+    padding-top: 20px;
+  }
+  
+  .order-success h3{
+    margin-left: 70px;
+  }
+
+  .order-success h6{
+    margin-left: 100px;
+    font-size: 15px;
+    color: rgb(60, 64, 68);
+  }
